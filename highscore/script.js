@@ -90,6 +90,7 @@ function msToTime(s) {
 
 function displayScores(element, scores) {
     let html = "";
+    console.log(scores);
     for (let score of scores) {
         // New date has to be called because some records are in number format instead of date format, localStorage records are stored as string
         let date = new Date(score.date);
