@@ -253,7 +253,7 @@ class Game {
         overviewElement.querySelector(".game-end-buttons").style.display = "none";
 
         let [meterElement, scoreElement] = overviewElement.querySelectorAll(".score-text p");
-        meterElement.innerText = `Ваш выбор на ${niceDistance} отдален от вашего стартового местоположения`;
+        meterElement.innerText = `Ваш выбор на ${niceDistance} отдален от загаданной локации`;
         if (score === 1)
             scoreElement.innerText = `Вы набрали одно очко`;
         else
@@ -277,11 +277,11 @@ class Game {
         let maxScore = this.map.maxScore * this.rules.roundCount;
 
         let [meterElement, scoreElement] = overviewElement.querySelectorAll(".score-text p");
-        meterElement.innerText = `Your latest guess is ${niceDistance} removed from your start location`;
+        meterElement.innerText = `Ваш последний выбор был на ${niceDistance} отдален от загаданной локации`;
         if (score === 1)
-            scoreElement.innerText = `You scored a point, which brings your total score to ${totalScore} points`;
+            scoreElement.innerText = `Вы набрали 1 очко, поэтому итоговая сумма очков - ${totalScore}`;
         else
-            scoreElement.innerText = `You scored ${score} points, which brings your total score to ${totalScore} points`;
+            scoreElement.innerText = `Вы набрали ${score} очков в последнем раунде, поэтому итоговая сумма очков - ${totalScore}`;
 
         let locations = this.previousGuesses.map(result => result.guess).concat(this.previousGuesses.map(result => result.actual));
         this.fitMap(locations);
@@ -468,12 +468,12 @@ class Game {
 
     formatDistance(meters) {
         if (meters < 1000) {
-            return `${Math.floor(meters * 10) / 10} m`;
+            return `${Math.floor(meters * 10) / 10} м`;
         }
         if (meters < 20000) {
-            return `${Math.floor(meters / 100) / 10} km`;
+            return `${Math.floor(meters / 100) / 10} км`;
         }
-        return `${Math.floor(meters / 1000)} km`;
+        return `${Math.floor(meters / 1000)} км`;
     }
 
     placeGuessMarker(location) {
