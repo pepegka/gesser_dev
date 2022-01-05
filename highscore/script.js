@@ -97,7 +97,6 @@ function displayScores(element, scores) {
             <li class="score" onclick="showScore(event)">
                 <div class="user">${score.user}</div>
                 <div class="total-score">${score.totalScore}</div>
-                <div class="score-date">${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}</div>
                 <div class="hidden">
                     ${score.hasOwnProperty('time') ? `<p class="score-date">Затраченное время: ${msToTime(score.time)}<p>` : ''}
                     <h4>Количество очков за раунды:</h4>
