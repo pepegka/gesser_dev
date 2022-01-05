@@ -24,8 +24,8 @@ async function init() {
                 <div class="map-text">
                     <div class="map-title">${country}</div>
                     <div class="map-actions">
-                        <a href=./play#${encodeURI(country)} class="map-play">Play</a>
-                        <a href=./highscore#${encodeURI(country)} class="map-score">Scores</a>
+                        <a href=./play#${encodeURI(country)} class="map-play">Играть</a>
+                        <a href=./highscore#${encodeURI(country)} class="map-score">Очки</a>
                     </div>
                 </div>
             </div>
