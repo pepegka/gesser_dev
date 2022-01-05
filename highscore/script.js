@@ -99,7 +99,7 @@ function displayScores(element, scores) {
                 <div class="total-score">${score.totalScore}</div>
                 <div class="score-date">${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}</div>
                 <div class="hidden">
-                    ${score.hasOwnProperty('time') ? `<p class="score-date">Time taken: ${msToTime(score.time)}<p>` : ''}
+                    ${score.hasOwnProperty('time') ? `<p class="score-date">Затраченное время: ${msToTime(score.time)}<p>` : ''}
                     <h4>Количество очков за раунды:</h4>
                     <ol class="individual-scores">
                         ${score.individualScores.map(s => `<li>${s}</li>`).join("")}
@@ -109,8 +109,8 @@ function displayScores(element, scores) {
                         <p>Количество раундов: ${score.rules.roundCount}</p>
                         <p>Лимит по времени: ${score.rules.timeLimit === -1 ? "∞" : score.rules.timeLimit}<p>
                         <p>Лимит по передвижениям: ${score.rules.moveLimit === -1 ? "∞" : score.rules.moveLimit}<p>
-                        <p>Зум: ${score.rules.zoomAllowed ? "allowed" : "restricted"}<p>
-                        <p>Вращение: ${score.rules.panAllowed ? "allowed" : "restricted"}<p>
+                        <p>Зум: ${score.rules.zoomAllowed ? "разрешен" : "запрещен"}<p>
+                        <p>Вращение: ${score.rules.panAllowed ? "разрешено" : "запрещено"}<p>
                     </div>
                 </div>
             </li>
