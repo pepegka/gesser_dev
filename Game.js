@@ -104,7 +104,7 @@ class Game {
     }
 
     applyRules() {
-        this.roundElement.innerHTML = `Round: <b>${this.currentRound}/${this.rules.roundCount}</b>`;
+        this.roundElement.innerHTML = `Раунд: <b>${this.currentRound}/${this.rules.roundCount}</b>`;
 
         if (!this.rules.panAllowed)
             this.svElement.restrictPan();
@@ -124,10 +124,10 @@ class Game {
             return;
         this.timeElement.style.display = "inline-block";
         this.timerRunning = true;
-        this.timeElement.innerHTML = `Time: <b>${seconds}</b>`;
+        this.timeElement.innerHTML = `Время: <b>${seconds}</b>`;
         this.timeInterval = setInterval(() => {
             seconds -= 0.1;
-            this.timeElement.innerHTML = `Time: <b>${seconds < 10 ? (Math.round(seconds * 10) / 10).toFixed(1) : Math.round(seconds)}</b>`;
+            this.timeElement.innerHTML = `Время: <b>${seconds < 10 ? (Math.round(seconds * 10) / 10).toFixed(1) : Math.round(seconds)}</b>`;
         }, 100);
         this.timeTimeout = setTimeout(() => {
             this.makeGuess({lat: 0, lng: 0});
@@ -214,13 +214,13 @@ class Game {
 
     playAgain() {
         let button = this.element.querySelector(".play-again-button");
-        button.innerText = "Loading...";
+        button.innerText = "Загрузка...";
         this.newGame();
         this.once("nextRound", () => {
             let overviewElement = this.element.querySelector(".guess-overview");
             overviewElement.style.transform = "translateY(-100%)";
             setTimeout(() => {
-                button.innerText = "Play Again";
+                button.innerText = "Сыграть снова";
                 this.applyRules();
             }, 300);
         });
@@ -239,7 +239,7 @@ class Game {
 
         let totalScore = this.previousGuesses.map(result => result.score).reduce((a, b) => a + b);
 
-        this.scoreElement.innerHTML = `Score: <b>${totalScore}</b>`;
+        this.scoreElement.innerHTML = `Очки: <b>${totalScore}</b>`;
 
         return [score, niceDistance, totalScore];
     }
@@ -253,11 +253,11 @@ class Game {
         overviewElement.querySelector(".game-end-buttons").style.display = "none";
 
         let [meterElement, scoreElement] = overviewElement.querySelectorAll(".score-text p");
-        meterElement.innerText = `Your guess is ${niceDistance} removed from your start location`;
+        meterElement.innerText = `Ваш выбор на ${niceDistance} отдален от вашего стартового местоположения`;
         if (score === 1)
-            scoreElement.innerText = `You scored a point`;
+            scoreElement.innerText = `Вы набрали одно очко`;
         else
-            scoreElement.innerText = `You scored ${score} points`;
+            scoreElement.innerText = `Вы набрали ${score} очков`;
 
         this.fitMap([guess, actual]);
         setTimeout(() => {
@@ -319,14 +319,14 @@ class Game {
 
     nextRoundButton() {
         let button = this.element.querySelector(".next-round-button");
-        button.innerText = "Loading...";
+        button.innerText = "Загрузка...";
 
         this.once("nextRound", () => {
             let overviewElement = this.element.querySelector(".guess-overview");
             overviewElement.style.transform = "translateY(-100%)";
 
             setTimeout(() => {
-                button.innerText = "Next Round";
+                button.innerText = "Следующий раунд";
                 if (this.svElement.panorama) {
                     this.svElement.panorama.setZoom(0);
                     this.applyRules();
@@ -402,7 +402,7 @@ class Game {
             position: guess,
             map: this.googleMap,
             animation: google.maps.Animation.DROP,
-            title: "Your guess",
+            title: "Ваша догадка",
         });
 
         setTimeout(() => {
@@ -428,7 +428,7 @@ class Game {
                 position: actual,
                 animation: google.maps.Animation.DROP,
                 icon: "https://maps.google.com/mapfiles/ms/icons/green-dot.png",
-                title: "Actual location",
+                title: "Настоящее место",
             });
             lineData.actual.setMap(this.googleMap);
         }, animationTime);
