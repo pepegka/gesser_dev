@@ -18,7 +18,6 @@ class Scores {
             .collection("scores")
             .where("map", "==", map)
             // .where("rules", "==", rules)
-            .orderBy("totalScore")
             // .orderBy("time")
             .limit(n)
             .get();
