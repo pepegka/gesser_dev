@@ -16,9 +16,9 @@ class StreetviewElement {
         if (moves === 0)
             this.restrictMove();
         remainingElement.style.display = "inline-block";
-        remainingElement.innerHTML = `Moves: <b>${moves}</b>`;
+        remainingElement.innerHTML = `Передвижения: <b>${moves}</b>`;
         this.panorama.addListener("position_changed", () => {
-            remainingElement.innerHTML = `Moves: <b>${--moves}</b>`;
+            remainingElement.innerHTML = `Передвидения: <b>${--moves}</b>`;
             if (moves === 0)
                 this.restrictMove();
         });
@@ -64,8 +64,6 @@ class StreetviewElement {
         let position = this.panorama.getPosition();
         let lat = position.lat();
         let lon = position.lng();
-        console.log(lat);
-        console.log(lon);
         return [parseFloat(lat), parseFloat(lon)];
     }
 
