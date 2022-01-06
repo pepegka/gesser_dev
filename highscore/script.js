@@ -109,8 +109,8 @@ function displayScores(element, scores) {
                         <p>Количество раундов: ${score.rules.roundCount}</p>
                         <p>Лимит по времени: ${score.rules.timeLimit === -1 ? "∞" : score.rules.timeLimit}<p>
                         <p>Лимит по передвижениям: ${score.rules.moveLimit === -1 ? "∞" : score.rules.moveLimit}<p>
-                        <p>Зум: ${score.rules.zoomAllowed ? "разрешен" : "запрещен"}<p>
-                        <p>Вращение: ${score.rules.panAllowed ? "разрешено" : "запрещено"}<p>
+                        <p>Зум: ${score.rules.zoomAllowed ? "вкл" : "выкл"}<p>
+                        <p>Вращение: ${score.rules.panAllowed ? "вкл" : "выкл"}<p>
                     </div>
                 </div>
             </li>
