@@ -49,7 +49,7 @@ async function init() {
     let localScoreElement = document.querySelector(".local-high-score");
     let localScores = scores.getLocalHighScores(map, rules.default);
     if (localScores.length === 0) {
-        localScoreElement.innerText = `You don"t have any scores on "${niceMap}" yet`;
+        localScoreElement.innerText = `У вас нет сохраненных локально очков на карте "${niceMap}"`;
     } else {
         displayScores(localScoreElement, localScores);
     }
@@ -57,7 +57,7 @@ async function init() {
     let globalScoreElement = document.querySelector(".global-high-score");
     let globalHighScores = await scores.getGlobalHighScores(map, rules.default);
     if (globalHighScores.length === 0) {
-        globalScoreElement.innerText = `There are no scores on "${niceMap}" yet`;
+        globalScoreElement.innerText = `Глобальный лидерборд пока отсутствует на карте "${niceMap}"`;
     } else {
         displayScores(globalScoreElement, globalHighScores);
     }
