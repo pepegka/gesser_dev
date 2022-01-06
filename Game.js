@@ -202,7 +202,7 @@ class Game {
             this.streetview = new Streetview(map, this.distribution);
         }
 
-        this.zoom = map.minimumDistanceForPoints < 3000 ? 22 : 18;
+        this.zoom = map.minimumDistanceForPoints < 3000 ? 32 : 28;
         this.currentRound = 0;
         this.events = {};
         this.overviewLines = [];
