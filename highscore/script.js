@@ -90,8 +90,10 @@ function msToTime(s) {
 
 function displayScores(element, scores) {
     let html = "";
+    const sorted_scores = scores.sort((a, b) => { return a.totalScore - b.totalScore; });
     console.log(scores);
-    for (let score of scores) {
+    console.log(sorted_scores);
+    for (let score of sorted_scores) {
         // New date has to be called because some records are in number format instead of date format, localStorage records are stored as string
         let date = new Date(score.date);
         html += `
