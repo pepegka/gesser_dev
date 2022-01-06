@@ -116,11 +116,11 @@ input[type="checkbox"]:checked + .radio-choice, input[type="radio"]:checked + .r
 }
 
 input[type="checkbox"] + .radio-choice:after {
-    content: ' запрещен(о)';
+    content: ' выкл';
 }
 
 input[type="checkbox"]:checked + .radio-choice:after {
-    content: ' разрешен(о)';
+    content: ' вкл';
 }
 
 .gamerule-selector input[type="radio"], .gamerule-selector input[type="checkbox"] {
