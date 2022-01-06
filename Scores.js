@@ -19,7 +19,6 @@ class Scores {
             .where("map", "==", map)
             // .where("rules", "==", rules)
             // .orderBy("time")
-            .limit(n)
             .get();
 
         let results = [];
