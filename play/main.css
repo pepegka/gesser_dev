@@ -1,14 +1,8 @@
-*:not(input.field) {
+* {
     margin: 0;
     padding: 0;
     font-family: Roboto;
     font-weight: 300;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-    cursor: default;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
 }
